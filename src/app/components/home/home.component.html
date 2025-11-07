@@ -1,0 +1,420 @@
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#111827; line-height:1.6;">
+  <!-- Header (100px, brand-left, nav links only, responsive burger on mobile) -->
+  <header class="topbar" style="background:#0B3D91; color:#fff; height:100px; display:flex; align-items:center; justify-content:space-between; padding:0 16px; position:sticky; top:0; z-index:1000;">
+    <div style="display:flex; align-items:center; gap:24px; min-width:0;">
+      <div class="brand" style="font-weight:800; letter-spacing:0.5px; white-space:nowrap;">PALLETFLOW PLANNER</div>
+      <nav class="nav desktop" style="display:flex; gap:18px; align-items:center; white-space:nowrap;">
+        <a href="#how-it-works" (click)="$event.preventDefault(); scrollTo('how-it-works')" style="color:#E5E7EB; font-weight:600;">How it works</a>
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="color:#E5E7EB; font-weight:600;">Features</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="color:#E5E7EB; font-weight:600;">Plans</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="color:#E5E7EB; font-weight:600;">Testimonials</a>
+        <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="color:#E5E7EB; font-weight:600;">Contact</a>
+      </nav>
+    </div>
+    <div class="burger" tabindex="0" role="button" aria-label="Toggle menu" (click)="menuOpen=!menuOpen" (keydown.enter)="menuOpen=!menuOpen">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+  <div class="mobile-menu" *ngIf="menuOpen" style="position:sticky; top:100px; background:#fff; border-bottom:1px solid #e5e7eb; box-shadow:0 4px 18px rgba(0,0,0,0.06); z-index:999;">
+    <div style="display:flex; flex-direction:column; padding:12px 16px; gap:8px;">
+      <a href="#how-it-works" (click)="$event.preventDefault(); scrollTo('how-it-works')" style="padding:10px 8px; color:#0B3D91; font-weight:700;">How it works</a>
+      <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="padding:10px 8px; color:#0B3D91; font-weight:700;">Features</a>
+      <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="padding:10px 8px; color:#0B3D91; font-weight:700;">Plans</a>
+      <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="padding:10px 8px; color:#0B3D91; font-weight:700;">Testimonials</a>
+      <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="padding:10px 8px; color:#0B3D91; font-weight:700;">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#F7FAFC,#ffffff); padding:48px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:28px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 460px;">
+          <h1 style="margin:0 0 8px 0; font-size:40px; line-height:1.2; color:#111827;">Turn mixed item lists into ready-to-roll trucks</h1>
+          <p style="margin:0 0 16px 0; color:#374151;">Build one smart list: pallets expand to dependent details, non‑pallet items stay simple. Drag each element into empty placeholders for trucks or containers and dispatch with confidence.</p>
+          <ul style="margin:0 0 16px 16px; color:#374151;">
+            <li>Create a single source list for every shipment</li>
+            <li>Expand pallets to see SKUs, weight, and dimensions on demand</li>
+            <li>Drag items into truck/container placeholders and auto‑validate capacity</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+            <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Book a live demo</button>
+            <button mat-stroked-button color="primary">Watch 90‑second overview</button>
+          </div>
+          <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">14‑day trial included. No credit card required.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:44px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">What Is PalletFlow Planner?</h2>
+      <p style="margin:0 0 12px 0; color:#374151;">Built for warehouses, 3PLs, and dispatch teams — a web app that streamlines load building from intake to dispatch without spreadsheets or double entry.</p>
+      <ul style="margin:0 0 16px 16px; color:#374151;">
+        <li>Design shipments with a mixed list of pallets and loose items</li>
+        <li>Auto‑surface pallet details only when relevant</li>
+        <li>Assign to multiple trucks/containers and stops on one screen</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">See a sample workflow</button>
+        <button mat-stroked-button color="primary">Security and deployment details</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Cloud-hosted with regional data residency options.</p>
+    </div>
+  </section>
+
+  <!-- How it works with interactive drag-and-drop demo -->
+  <section id="how-it-works" style="padding:44px 16px; background:#F7FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">How It Works</h2>
+      <p style="margin:0 16px 18px 0; color:#374151;">From intake to dispatch in five quick steps — scan, expand, drag, validate, export.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:16px;">
+        <mat-card class="feature-card" style="flex:1 1 200px; min-width:200px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">1) Build your source list</div>
+          <div>Add items manually, import CSV, or scan barcodes. Flag items as pallet or non‑pallet.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 200px; min-width:200px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">2) Auto‑expand pallets</div>
+          <div>View dependent details (SKUs, counts, weight, dimensions) on demand.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 200px; min-width:200px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">3) Create placeholders</div>
+          <div>Empty slots for trucks/containers with capacity and rules.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 200px; min-width:200px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">4) Drag to assign</div>
+          <div>Drag items into placeholders. See live capacity checks.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 200px; min-width:200px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">5) Validate & export</div>
+          <div>Lock loads, generate BOL/packing lists, and export to TMS/CSV or via API.</div>
+        </mat-card>
+      </div>
+
+      <mat-card style="padding:16px; border-radius:14px;">
+        <div style="display:flex; flex-wrap:wrap; gap:16px;">
+          <div style="flex:1 1 340px; min-width:300px;">
+            <h3 style="margin:0 0 8px 0;">Source list</h3>
+            <div cdkDropList id="sourceList" [cdkDropListData]="sourceItems" [cdkDropListConnectedTo]="dropListIds" (cdkDropListDropped)="drop($event)" class="drop-zone" style="min-height:180px;">
+              <div *ngFor="let it of sourceItems; let i = index" cdkDrag class="drag-item">
+                <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                  <div>
+                    <strong>{{it.name}}</strong>
+                    <span style="font-size:12px; color:#6B7280;">• {{it.type === 'pallet' ? 'Pallet' : 'Item'}}</span>
+                  </div>
+                  <div *ngIf="it.type==='pallet'">
+                    <button mat-stroked-button color="primary" (click)="$event.stopPropagation(); toggleDetails(it)" style="height:32px; line-height:32px;">{{it.expanded ? 'Hide' : 'Expand'}}</button>
+                  </div>
+                </div>
+                <div *ngIf="it.type==='pallet' && it.expanded" style="margin-top:6px; padding:8px; border:1px dashed #e5e7eb; border-radius:8px; background:#fafafa;">
+                  <div *ngFor="let d of it.details" style="font-size:12px; color:#374151;">
+                    SKU: {{d.sku}} • Qty: {{d.qty}} • {{d.weight}} • {{d.dimensions}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="flex:1 1 460px; min-width:320px;">
+            <h3 style="margin:0 0 8px 0;">Assign to trucks/containers</h3>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <div *ngFor="let c of carriers" style="flex:1 1 220px; min-width:220px;">
+                <div style="font-weight:700; margin-bottom:6px;">{{c.name}}</div>
+                <div cdkDropList [id]="c.id" [cdkDropListData]="c.items" [cdkDropListConnectedTo]="dropListIds" (cdkDropListDropped)="drop($event)" class="drop-zone" style="min-height:140px;">
+                  <div *ngFor="let it of c.items" cdkDrag class="drag-item">
+                    <strong>{{it.name}}</strong>
+                    <span style="font-size:12px; color:#6B7280;">• {{it.type === 'pallet' ? 'Pallet' : 'Item'}}</span>
+                  </div>
+                  <div *ngIf="!c.items.length" style="color:#9CA3AF; font-size:12px;">Drag here</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Try an interactive demo</button>
+        <button mat-stroked-button color="primary">Download example CSV</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Supports handheld scanners and camera-based barcode capture.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:44px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Everything you need to load right the first time</h2>
+      <p style="margin:0 0 16px 0; color:#374151;">Fast planning, fewer errors, and clean hand‑offs to transport.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Dependent pallet drill‑down</div>
+          <div>Expand pallets inline to reveal contents, weights, and dimensions without leaving the list.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Compatibility rules</div>
+          <div>Set hazmat, temperature, stackability, and segregation rules to prevent invalid assignments.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Capacity & cube</div>
+          <div>Track weight, volume, and axle limits per truck/container with visual thresholds.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Multi‑stop loads</div>
+          <div>Assign items to specific stops and print per‑stop documentation.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Templates & presets</div>
+          <div>Save common loads, routes, and container profiles to reuse in seconds.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Scanner‑ready</div>
+          <div>Zebra and Honeywell friendly; supports GS1 barcodes and lot/expiry capture.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Offline drafts</div>
+          <div>Keep drafting during network hiccups; sync resumes automatically.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; padding:18px; border:1px solid #E5E7EB; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Audit & roles</div>
+          <div>Granular permissions and full activity history for compliance.</div>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Explore all features</button>
+        <button mat-stroked-button color="primary">Download spec sheet</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Role‑based access with audit trails.</p>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:44px 16px; background:#F7FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Plan faster, load safer, and ship on time</h2>
+      <p style="margin:0 0 12px 0; color:#374151;">Replace spreadsheets with a purpose‑built planner that respects real‑world constraints.</p>
+      <ul style="margin:0 0 16px 16px; color:#374151;">
+        <li>Cut planning time by up to 60% with drag‑and‑drop</li>
+        <li>Reduce load errors and rework with rule checks</li>
+        <li>Create compliant documents in one click</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Calculate your ROI</button>
+        <button mat-stroked-button color="primary">See customer results</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Typical onboarding under 10 days.</p>
+    </div>
+  </section>
+
+  <!-- Plans & Pricing -->
+  <section id="plans" style="padding:44px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Simple pricing for any operation</h2>
+      <p style="margin:0 0 18px 0; color:#374151;">Start free, scale as your lanes and volume grow.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e5e7eb; border-radius:14px; padding:20px; background:#ffffff;">
+          <div style="font-size:18px; color:#111827; font-weight:700;">Starter</div>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#111827;">$0 forever • up to 2 users</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#374151;">
+            <li>Core drag‑and‑drop planner</li>
+            <li>CSV import/export</li>
+            <li>Email support</li>
+          </ul>
+          <button mat-stroked-button color="primary" style="width:100%; height:42px;">Create free account</button>
+        </mat-card>
+
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #0B3D91; border-radius:16px; padding:22px; background:#0B3D91; color:#f8fafc; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <div style="font-size:18px; font-weight:700; color:#fff;">Team</div>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#fff;">$29/user/month</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#E5E7EB;">
+            <li>Everything in Starter</li>
+            <li>Capacity & compatibility rules</li>
+            <li>Multi‑stop loads and templates</li>
+            <li>Priority support</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#FF7A00; color:#111827; font-weight:800;">Start 14‑day trial</button>
+        </mat-card>
+
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e5e7eb; border-radius:14px; padding:20px; background:#ffffff;">
+          <div style="font-size:18px; color:#111827; font-weight:700;">Enterprise</div>
+          <div style="margin:6px 0 14px 0; font-size:20px; color:#111827;">Custom pricing</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#374151;">
+            <li>SSO, SAML, and SCIM</li>
+            <li>On‑prem or private cloud</li>
+            <li>Advanced audit and controls</li>
+            <li>Dedicated success manager</li>
+          </ul>
+          <button mat-stroked-button color="primary" style="width:100%; height:42px;">Request a custom quote</button>
+        </mat-card>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6B7280;">Prices in USD; taxes may apply.</p>
+    </div>
+  </section>
+
+  <!-- Integrations -->
+  <section id="integrations" style="padding:44px 16px; background:#F7FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Connect your WMS, TMS, and scanners</h2>
+      <p style="margin:0 0 16px 0; color:#374151;">Import orders, sync loads, and keep systems aligned.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 220px; min-width:220px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">WMS</div>
+          <div>SAP EWM, Oracle NetSuite, Microsoft Dynamics 365, Odoo.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 220px; min-width:220px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">TMS</div>
+          <div>Project44, FourKites, MercuryGate, SAP TM.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 220px; min-width:220px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Data pipes</div>
+          <div>SFTP/CSV, webhooks, and middleware (MuleSoft, Boomi, Make).</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 220px; min-width:220px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">Hardware</div>
+          <div>Zebra/Honeywell scanners and label printers.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 220px; min-width:220px; padding:16px; border:1px solid #e5e7eb; border-radius:12px;">
+          <div style="font-weight:700; margin-bottom:6px;">REST API</div>
+          <div>Read/write loads, items, and capacity profiles with OAuth2.</div>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">View API docs</button>
+        <button mat-stroked-button color="primary">See all connectors</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Sandbox available for developers.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:44px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Trusted by high‑throughput operations</h2>
+      <p style="margin:0 0 16px 0; color:#374151;">From food & beverage to industrial manufacturing.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e5e7eb; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Elena M. • <span style="font-weight:400; color:#6B7280;">Warehouse Manager, 3PL</span></p>
+          <p style="margin:0; color:#374151;">“The pallet expansion saved us hours. We drag, validate, and print—no more back‑and‑forth spreadsheets.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e5e7eb; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Ravi K. • <span style="font-weight:400; color:#6B7280;">Logistics Lead, CPG Manufacturer</span></p>
+          <p style="margin:0; color:#374151;">“Capacity checks caught issues before loading. Missed axle limits are now a thing of the past.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e5e7eb; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Carlos D. • <span style="font-weight:400; color:#6B7280;">Dispatcher, Regional Carrier</span></p>
+          <p style="margin:0; color:#374151;">“Assigning to containers by stop is painless. Our hand‑offs to drivers are cleaner than ever.”</p>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Read more stories</button>
+        <button mat-stroked-button color="primary">Reference call</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Quotes verified by our CS team.</p>
+    </div>
+  </section>
+
+  <!-- FAQ (mat-accordion) -->
+  <section id="faq" style="padding:44px 16px; background:#F7FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Answers to common questions</h2>
+      <p style="margin:0 0 12px 0; color:#374151;">If you don't see yours, we're one message away.</p>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Can I keep non‑pallet items simple?</span>
+          </mat-expansion-panel-header>
+          <p>Yes — enter them as single lines without dependent details. Pallet items expand only when needed.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>How do placeholders work?</span>
+          </mat-expansion-panel-header>
+          <p>Create named slots for each truck/container and stop, with capacity and rules. Drag items into these slots and validate instantly.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>What capacity rules are supported?</span>
+          </mat-expansion-panel-header>
+          <p>Weight, cube, axle, stacking, hazmat, temperature, and segregation — configured per profile.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Do you support scanners?</span>
+          </mat-expansion-panel-header>
+          <p>Yes — Zebra and Honeywell, plus camera scanning on mobile browsers.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>Is there an API?</span>
+          </mat-expansion-panel-header>
+          <p>Yes — REST API and SFTP/CSV for batch jobs. Webhooks for real‑time events.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span>What about deployment?</span>
+          </mat-expansion-panel-header>
+          <p>Cloud by default; private cloud or on‑prem options for Enterprise customers.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">More FAQs</button>
+        <button mat-stroked-button color="primary">Implementation guide</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">Documentation includes examples and sample data.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="padding:44px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 6px 0; font-size:28px; color:#111827;">Get a Demo</h2>
+      <p style="margin:0 0 12px 0; color:#374151;">See your loads planned in minutes. Share a recent shipment and we'll configure a live demo to match your process.</p>
+      <ul style="margin:0 0 16px 16px; color:#374151;">
+        <li>Live walkthrough with a solutions engineer</li>
+        <li>Data security and compliance overview</li>
+        <li>Action plan and rollout timeline</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#0B3D91; color:#fff;">Book time on our calendar</button>
+        <button mat-stroked-button color="primary">Email sales</button>
+      </div>
+      <p style="margin:10px 0 0 0; font-size:12px; color:#6B7280;">sales&#64;palletflow.app • +1 (312) 555‑0145</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0f172a; color:#E5E7EB;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:800; margin-bottom:6px;">PALLETFLOW PLANNER</div>
+        <div style="font-size:13px; color:#9CA3AF;">PalletFlow Planner is modern load‑building software that turns complex item lists into accurate trucks and containers—fast.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Product</div>
+          <a href="#hero" (click)="$event.preventDefault(); scrollTo('hero')" style="display:block; color:#D1D5DB; margin-bottom:6px;">Hero</a>
+          <a href="#how-it-works" (click)="$event.preventDefault(); scrollTo('how-it-works')" style="display:block; color:#D1D5DB; margin-bottom:6px;">How it works</a>
+          <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="display:block; color:#D1D5DB; margin-bottom:6px;">Features</a>
+          <a href="#integrations" (click)="$event.preventDefault(); scrollTo('integrations')" style="display:block; color:#D1D5DB; margin-bottom:6px;">Integrations</a>
+          <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="display:block; color:#D1D5DB;">Plans</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; color:#D1D5DB; margin-bottom:6px;">About</a>
+          <a href="#why" (click)="$event.preventDefault(); scrollTo('why')" style="display:block; color:#D1D5DB; margin-bottom:6px;">Why</a>
+          <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="display:block; color:#D1D5DB; margin-bottom:6px;">Testimonials</a>
+          <a href="#contact" (click)="$event.preventDefault(); scrollTo('contact')" style="display:block; color:#D1D5DB;">Contact</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Legal</div>
+          <a href="#" style="display:block; color:#D1D5DB; margin-bottom:6px;">Privacy Policy</a>
+          <a href="#" style="display:block; color:#D1D5DB; margin-bottom:6px;">Terms of Service</a>
+          <a href="#" style="display:block; color:#D1D5DB;">Data Processing Addendum</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#1f2937;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#9CA3AF;">© 2025 palletflow-planner. All rights reserved.</div>
+  </footer>
+</div>
